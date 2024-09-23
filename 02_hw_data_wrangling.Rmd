@@ -150,6 +150,11 @@ You do not need to exactly match the labels, but you should have informative lab
 
 ## Answer 4
 
+```{r}
+fb_top_plot <- ggplot() +
+  geom_histogram()
+fb_top_plot
+```
 
 
 \newpage
