@@ -112,7 +112,22 @@ Create a histogram of this variable for just the US House races. Save the ggplot
 
 ## Answer 3
 
+```{r}
+fb_ads <- fb_ads |>
+  mutate(impressions_millions = (impressions / 1000000))
+fb_ads
+```
 
+```{r}
+library(ggplot2)
+plot_q3 <- ggplot((data = fb_ads|> filter(office == "US House")),
+                  mapping = aes(impressions_millions))+
+  geom_histogram() +
+  xlim(0,50) +
+  ylim(0,250)
+plot_q3
+```
+The shape of the histogram is uneven/skewed, with the majority of US House candidates reaching under 5 million impressions and the highest proportion of candidates concentrated at the very left end of the histogram (lowest number of ads impressions). Clearly, most of the US House candidates did not have more than 10 million ads impressions on Facebook. 
 
 \newpage
 
