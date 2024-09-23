@@ -1,6 +1,6 @@
 ---
 title: "Problem Set 2: Data Wrangling"
-author: Your Name Here
+author: Reuben Berkowitz
 output: pdf_document
 ---
 
@@ -45,7 +45,23 @@ Use `dplyr` functions to create a table with the number of candidates in each ty
 
 ## Answer 1
 
+```{r}
+library(readr)
+fb_ads <- read_csv("data/fb_ads.csv")
+View(fb_ads)
+```
 
+There are 7,014 candidates in the dataset.
+
+
+```{r}
+library(dplyr)
+incumbency_table <- fb_ads |>
+  group_by(incumbency) |>
+  summarize(count = n()) |>
+  knitr::kable()
+incumbency_table
+```
 
 \newpage
 
@@ -64,7 +80,6 @@ In the writeup, describe which type of candidate sponsored the most promoting ad
  **Rubric**: 3pts for creating `party_incumbent_promote` correctly (autograder); 2pt for a nicely formatted table (PDF); 1pt for changing the column names of the output table (PDF); 1pt for correctly identifying the type of candidate with highest average (PDF)
 
 ## Answer 2
-
 
 
 \newpage
