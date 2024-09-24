@@ -154,6 +154,8 @@ You do not need to exactly match the labels, but you should have informative lab
 ```{r}
 library(ggplot2)
 library(dplyr)
+library(readr)
+library(forcats)
 
 top_15_candidates <- fb_ads |>
   filter(office == "US House") |>
@@ -162,7 +164,7 @@ top_15_candidates <- fb_ads |>
 
 fb_top_plot <- ggplot(data = top_15_candidates,
                       mapping = aes(x = impressions_millions,
-                                      y = cand_name_last)) +
+                                      y = fct_reorder(cand_name_last, impressions_millions), fill = party)) +
   geom_col() + 
     labs(x = "Facebook Ad Impressions (Millions)", 
          y = "Candidate",
@@ -172,8 +174,6 @@ fb_top_plot <- ggplot(data = top_15_candidates,
 fb_top_plot
   
 ```
-
-testing
 
 
  
