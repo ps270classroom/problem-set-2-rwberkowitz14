@@ -168,6 +168,7 @@ fb_top_plot <- ggplot(data = top_15_candidates,
          y = "Candidate",
        title = "Top 15 US House Candidate Facebook Ad Impressions, 2017-2018") 
 
+
 fb_top_plot
   
 ```
