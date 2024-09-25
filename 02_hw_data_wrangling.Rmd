@@ -164,7 +164,7 @@ top_15_candidates <- fb_ads |>
 fb_top_plot <- ggplot(data = top_15_candidates,
                       mapping = aes(x = impressions_millions, 
                                     y = fct_reorder(cand_name_last, 
-                                                    impressions_millions),
+                                        impressions_millions),
                                     fill = party)) +
   scale_fill_manual(values = c(R = "red", D = "blue")) +
   geom_col() +
