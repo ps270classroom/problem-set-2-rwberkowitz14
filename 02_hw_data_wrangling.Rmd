@@ -1,7 +1,8 @@
+
 ---
 title: "Problem Set 2: Data Wrangling"
-author: Reuben Berkowitz
-output: pdf_document
+author: "Reuben Berkowitz"
+output: "pdf_document"
 ---
 
 
@@ -90,7 +91,7 @@ party_incumbent_promote <- fb_ads |>
 party_incumbent_promote
 ```
 
-```{r  (options(digits = 3)}
+```{r (options(digits = 3))}
   knitr::kable(party_incumbent_promote, col.names = c("Party", "Incumbency", "Promotion Ads")) 
 ```
   
