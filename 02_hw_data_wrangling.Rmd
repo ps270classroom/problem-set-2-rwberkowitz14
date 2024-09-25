@@ -92,8 +92,8 @@ party_incumbent_promote <- fb_ads |>
 party_incumbent_promote
 ```
 
-```{r Answer_2B (options(digits = 3))}
-  knitr::kable(party_incumbent_promote, col.names = c("Party", "Incumbency", "Promotion Ads")) 
+```{r Answer_2B}
+  knitr::kable(party_incumbent_promote, col.names = c("Party", "Incumbency", "Promotion Ads"), digits = 3) 
 ```
   
   
@@ -171,6 +171,7 @@ fb_top_plot <- ggplot(data = top_15_candidates,
 fb_top_plot
   
 ```
+
 
 
  
