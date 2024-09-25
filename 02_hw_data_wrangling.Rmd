@@ -176,7 +176,7 @@ fb_top_plot <- ggplot(data = top_15_candidates,
 fb_top_plot
 ```
   
-##I discussed this problem set with Kaushal and Ally.
+#I discussed this problem set with Kaushal and Ally.
 
 
  
