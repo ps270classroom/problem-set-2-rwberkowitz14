@@ -51,6 +51,7 @@ library(dplyr)
 library(readr)
 library(forcats)
 fb_ads <- read_csv("data/fb_ads.csv")
+fb_ads
 ```
 
 There are 7,014 candidates in the dataset.
@@ -60,7 +61,7 @@ There are 7,014 candidates in the dataset.
 incumbency_table <- fb_ads |>
   group_by(incumbency) |>
   summarize(count = n()) |>
-  knitr::kable()
+    knitr::kable()
 incumbency_table
 ```
 
@@ -163,10 +164,9 @@ top_15_candidates <- fb_ads |>
 fb_top_plot <- ggplot(data = top_15_candidates,
                       mapping = aes(x = impressions_millions, 
                                     y = fct_reorder(cand_name_last, 
-                                        impressions_millions),
-                                    fill = party)) +
-  scale_fill_manual(values = c(R = "red", D = "blue")) +
-  geom_col() +
+                                        impressions_millions))) +
+                        geom_col(fill = party, , scale_fill_manual
+           (values = c(R = "red", D = "blue"))) +
     labs(x = "Facebook Ad Impressions (Millions)", 
          y = "Candidate",
        title = "Top 15 US House Candidate Facebook Ad Impressions, 2017-2018") 
