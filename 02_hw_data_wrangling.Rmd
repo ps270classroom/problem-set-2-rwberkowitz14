@@ -93,7 +93,8 @@ party_incumbent_promote
 ```
 
 ```{r Answer_2B}
-  knitr::kable(party_incumbent_promote, col.names = c("Party", "Incumbency", "Promotion Ads"), digits = 3) 
+  knitr::kable(party_incumbent_promote,
+               col.names = c("Party", "Incumbency", "Promotion Ads"), digits = 3) 
 ```
   
   
