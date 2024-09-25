@@ -56,14 +56,19 @@ fb_ads
 
 There are 7,014 candidates in the dataset.
 
-
-```{r Answer_1B}
-incumbency_table <- fb_ads |>
-  group_by(incumbency) |>
+##old code in case I need it:  group_by(incumbency) |>
   summarize(count = n()) |>
     knitr::kable()
-incumbency_table
+
+
+```{r Answer_1B}
+incumbency_table <- fb_ads
+incumbency_table <- incumbency_table |>
+  count(incumbency)
+ 
+knitr::kable(incumbency_table)
 ```
+
 
 \newpage
 
