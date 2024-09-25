@@ -56,10 +56,6 @@ fb_ads
 
 There are 7,014 candidates in the dataset.
 
-##old code in case I need it:  group_by(incumbency) |>
-  summarize(count = n()) |>
-    knitr::kable()
-
 
 ```{r Answer_1B}
 incumbency_table <- fb_ads
@@ -180,7 +176,7 @@ fb_top_plot <- ggplot(data = top_15_candidates,
 fb_top_plot
 ```
   
-
+##I discussed this problem set with Kaushal and Ally.
 
 
  
