@@ -51,7 +51,6 @@ library(dplyr)
 library(readr)
 library(forcats)
 fb_ads <- read_csv("data/fb_ads.csv")
-View(fb_ads)
 ```
 
 There are 7,014 candidates in the dataset.
@@ -127,9 +126,9 @@ library(ggplot2)
 
 plot_q3 <- ggplot((data = fb_ads|> filter(office == "US House")),
                   mapping = aes(impressions_millions)) +
-  geom_histogram() +
+  geom_histogram(na.rm = TRUE) +
   xlim(0,50) +
-  ylim(0,250)
+  ylim(0,300)
 plot_q3
 ```
 The shape of the histogram is uneven/skewed, with the majority of US House candidates reaching under 5 million impressions and the highest proportion of candidates concentrated at the very left end of the histogram (lowest number of ads impressions). Clearly, most of the US House candidates did not have more than 10 million ads impressions on Facebook. 
