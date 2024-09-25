@@ -46,7 +46,7 @@ Use `dplyr` functions to create a table with the number of candidates in each ty
 
 ## Answer 1
 
-```{r}
+```{r Answer_1}
 library(readr)
 fb_ads <- read_csv("data/fb_ads.csv")
 View(fb_ads)
@@ -55,7 +55,7 @@ View(fb_ads)
 There are 7,014 candidates in the dataset.
 
 
-```{r}
+```{r Answer_1B}
 library(dplyr)
 incumbency_table <- fb_ads |>
   group_by(incumbency) |>
@@ -83,7 +83,7 @@ In the writeup, describe which type of candidate sponsored the most promoting ad
 ## Answer 2
 
 
-```{r}
+```{r Answer_2}
 party_incumbent_promote <- fb_ads |>
   filter(office == "US House" | office == "US Senate") |>
   group_by(party, incumbency) |>
@@ -91,7 +91,7 @@ party_incumbent_promote <- fb_ads |>
 party_incumbent_promote
 ```
 
-```{r (options(digits = 3))}
+```{r Answer_2B (options(digits = 3))}
   knitr::kable(party_incumbent_promote, col.names = c("Party", "Incumbency", "Promotion Ads")) 
 ```
   
@@ -113,13 +113,13 @@ Create a histogram of this variable for just the US House races. Save the ggplot
 
 ## Answer 3
 
-```{r}
+```{r Answer_3}
 fb_ads <- fb_ads |>
   mutate(impressions_millions = (impressions / 1000000))
 fb_ads
 ```
 
-```{r}
+```{r Answer_3B}
 library(ggplot2)
 
 plot_q3 <- ggplot((data = fb_ads|> filter(office == "US House")),
@@ -152,7 +152,7 @@ You do not need to exactly match the labels, but you should have informative lab
 
 ## Answer 4
 
-```{r}
+```{r Answer_4}
 library(ggplot2)
 library(dplyr)
 library(readr)
